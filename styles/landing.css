@@ -35,13 +35,18 @@ body.landing {
     position: relative;
     padding: 2rem;
     text-align: center;
-    opacity: 0;
-    -webkit-transform: scaleX(0.9) translateY(3rem);
-    -moz-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition-delay: 0.2s;
-    transition-delay: 0.2s;
+     opacity: 0;
+     -webkit-transform: scaleX(0.9) translateY(3rem) rotate(180deg);
+     -moz-transform: scaleX(0.9) translateY(3rem) rotate(180deg);
+     transform: scaleX(0.9) translateY(3rem) rotate(180deg);
+     -webkit-transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+     -moz-transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+     transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+     -webkit-transition-delay: 0.2s;
+     -moz-transition-delay: 0.2s;
+     transition-delay: 0.2s;
 }
+
 
 .point .point-title {
     font-size: 1.25rem;
