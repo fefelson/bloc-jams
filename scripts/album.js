@@ -76,14 +76,16 @@ var setCurrentAlbum = function(album) {
         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
     }
     
+};
+
+window.onload = function() {
+    setCurrentAlbum(albumPicasso);
+    var albumImage = document.getElementsByClassName("album-cover-art")[0];
+    
     albumImage.addEventListener("click", function(event) {
        var albums = [albumPicasso, albumDreadful, albumMarconi];
         
         var index = Math.floor(Math.random() * 3) % 3;
         setCurrentAlbum(albums[index]);
     });
-};
-
-window.onload = function() {
-    setCurrentAlbum(albumPicasso);
 };
