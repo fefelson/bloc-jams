@@ -30,6 +30,22 @@ var albumMarconi = {
     ]
 };
 
+// My Example Album
+var albumDreadful = {
+    title: "Penny Dreadful",
+    artist: "Showtime",
+    label: "LOUD",
+    year: "2014",
+    albumArtUrl: "assets/images/album_covers/06.png",
+    songs: [
+        { title: "Miss Ives", duration: "1:01"},
+        { title: "Victor Frankenstein", duration: "5:01"},
+        { title: "Chandler", duration: "3:21"},
+        { title: "Malcolm Murray", duration: "3:14"},
+        { title: "Dorian Grey", duration: "2:15"}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
         "<tr class=\"album-view-song-item\">"
@@ -59,6 +75,13 @@ var setCurrentAlbum = function(album) {
     for (var i = 0; i < album.songs.length; i++) {
         albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
     }
+    
+    albumImage.addEventListener("click", function(event) {
+       var albums = [albumPicasso, albumDreadful, albumMarconi];
+        
+        var index = Math.floor(Math.random() * 3) % 3;
+        setCurrentAlbum(albums[index]);
+    });
 };
 
 window.onload = function() {
